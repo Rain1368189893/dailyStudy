@@ -1137,6 +1137,26 @@ function getNum(a, b){
 	}
 }
 
+var obj = "Hello world I am rain";
+var arr = obj.split(" ");
+
+
+var nums = [2, 3, 4, 5];
+var newnum = 1;
+nums.unshift(newnum);
+
+
+Array.matrix = function(numrows, numcols, initial) {
+	var arr = [];
+	for (var i = 0; i < numrows; ++i) {
+		var columns = [];
+		for (var j = 0; j < numcols; ++j) {
+			columns[j] = initial;
+		}
+	arr[i] = columns;
+	}
+	return arr;
+}
 
 
 
