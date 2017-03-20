@@ -50,10 +50,10 @@ var handler = {
 
 	doSomething: function(type) {
 		console.log('Handling ' + type + ' for ' + this.id);
-	} 
+	}
 
 	// doSomething: (type) => let id = '123' console.log('Handling ' + type + ' for ' + this.id)
-	 
+
 }
 
 function foo() {
@@ -101,7 +101,7 @@ let insert = (value) => ({into: (array) => ({after: (afterValue) => {
 
 insert(2).into([1,3]).after(1);
 
-var flattened1 = [[0, 1], [2, 3], [4, 5]].reduce(function(a, b) { 
+var flattened1 = [[0, 1], [2, 3], [4, 5]].reduce(function(a, b) {
   return a.concat(b);
 }, ['a','b']);
 
@@ -997,8 +997,8 @@ if (!Function.prototype.bind) {
 			fToBind = this,
 			fNOP = function () {},
 			fBound = function () {
-				return fToBind.apply(this instanceof fNOP 
-										? this 
+				return fToBind.apply(this instanceof fNOP
+										? this
 										: oThis || this,
 										aArgs.concat(Array.prototype.slice.call(arguments))
 										);
@@ -1028,25 +1028,25 @@ if (function f(){}) {
 console.log(y);
 
 
-var globalVar = "abc"; 
+var globalVar = "abc";
 
-// Parent self invoking function 
+// Parent self invoking function
 (function outerFunction (outerArg) { // begin of scope outerFunction
-    // Variable declared in outerFunction function scope 
-    var outerFuncVar = 'x';    
-    // Closure self-invoking function 
+    // Variable declared in outerFunction function scope
+    var outerFuncVar = 'x';
+    // Closure self-invoking function
     (function innerFunction (innerArg) { // begin of scope innerFunction
         // variable declared in innerFunction function scope
-        var innerFuncVar = "y"; 
-        console.log(          
+        var innerFuncVar = "y";
+        console.log(
             "outerArg = " + outerArg + "\n" +
             "outerFuncVar = " + outerFuncVar + "\n" +
-            "innerArg = " + innerArg + "\n" +   
+            "innerArg = " + innerArg + "\n" +
             "innerFuncVar = " + innerFuncVar + "\n" +
             "globalVar = " + globalVar);
- 
-    })(5); // Pass 5 as parameter 
-})(7); // Pass 7 as parameter 
+
+    })(5); // Pass 5 as parameter
+})(7); // Pass 7 as parameter
 // innerFunction is closure that is defined inside outerFunc
 7
 x
@@ -1199,5 +1199,33 @@ function insert(data) {
 		}
 	}
 }
+
+
+
+async function getStockPriceByName(name) {
+	var symbol = await getStockSymbol (name);
+	var stockPrice = await getStockPrice(symbol);
+	return stockPrice;
+}
+
+getStockPriceByName('goog').then(function (result) {
+	console.log(result);
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
